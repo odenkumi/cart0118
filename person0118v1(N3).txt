@@ -61,4 +61,3 @@ CREATE TABLE tb_book (		-- 建立表
   create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP() COMMENT '建立時間',
   PRIMARY KEY (id)
 );
-123
