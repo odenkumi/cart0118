@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2023-01-18 01:56:52
+-- 產生時間： 2023-01-18 01:53:28
 -- 伺服器版本： 10.4.27-MariaDB
 -- PHP 版本： 7.4.33
 
@@ -29,27 +29,29 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tb_person` (
   `id` int(11) NOT NULL COMMENT 'id',
-  `name` varchar(45) DEFAULT NULL COMMENT '姓名',
-  `english_name` varchar(45) DEFAULT NULL COMMENT '英文名',
-  `age` int(10) UNSIGNED DEFAULT NULL COMMENT '年齡',
-  `sex` varchar(45) DEFAULT NULL COMMENT '性別',
-  `birthday` date DEFAULT NULL COMMENT '出生日期',
-  `description` text DEFAULT NULL COMMENT '備註'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `name` varchar(45) NOT NULL COMMENT '姓名',
+  `englishname` varchar(45) NOT NULL COMMENT '英文名',
+  `age` int(2) NOT NULL COMMENT '年齡',
+  `sex` varchar(10) NOT NULL COMMENT '性別',
+  `birth` date NOT NULL COMMENT '出生年月日',
+  `description` text NOT NULL COMMENT '備註'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- 傾印資料表的資料 `tb_person`
 --
 
-INSERT INTO `tb_person` (`id`, `name`, `english_name`, `age`, `sex`, `birthday`, `description`) VALUES
+INSERT INTO `tb_person` (`id`, `name`, `englishname`, `age`, `sex`, `birth`, `description`) VALUES
 (1, '劉京華', 'Helloweenvsfei', 25, '男', '1982-08-09', '無備註'),
 (2, '科特柯本', 'Kurt Cobain', 27, '男', '1967-02-20', 'Nirvana'),
-(3, '王菲', 'Faye', 31, '女', '1969-08-08', '獅子座'),
-(4, '艾薇兒', 'Avril Lavigne', 24, '女', '1984-09-27', '星座：天秤座'),
-(5, 'W. AXL ROSE', 'W. AXL ROSE', 45, '男', '1962-02-06', 'GNR'),
-(6, '柯蒂斯', 'Ian Curtis', 50, '男', '1956-07-15', 'Joy Division'),
-(7, '巴菲特', 'Warren Buffett', 78, '女', '1930-08-30', 'Stock'),
-(8, '比爾蓋茨', 'Bill Gates', 18, '女', '1955-10-28', 'Microsoft');
+(3, '劉京華', 'Helloweenvsfei', 25, '男', '1982-08-09', '無備註'),
+(4, '科特柯本', 'Kurt Cobain', 27, '男', '1967-02-20', 'Nirvana'),
+(5, '王菲', 'Faye', 31, '女', '1969-08-08', '獅子座'),
+(6, '艾薇兒', 'Avril Lavigne', 24, '女', '1984-09-27', '星座：天秤座'),
+(7, 'W. AXL ROSE', 'W. AXL ROSE', 45, '男', '1962-02-06', 'GNR'),
+(8, '柯蒂斯', 'Ian Curtis', 50, '男', '1956-07-15', 'Joy Division'),
+(9, '巴菲特', 'Warren Buffett', 78, '女', '1930-08-30', 'Stock'),
+(10, '比爾蓋茨', 'Bill Gates', 18, '女', '1955-10-28', 'Microsoft');
 
 --
 -- 已傾印資料表的索引
@@ -69,7 +71,7 @@ ALTER TABLE `tb_person`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `tb_person`
 --
 ALTER TABLE `tb_person`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
